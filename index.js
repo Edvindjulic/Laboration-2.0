@@ -4,6 +4,12 @@ function main() {
     startMenu();
 }
 
+const audio = new Audio("./monster.wav");	
+function playAudio() {
+    audio.play();
+}
+
+
 function startMenu() {
     const startButton = document.getElementById('startButton');
     startButton.textContent = "Starta spel";
@@ -30,6 +36,36 @@ function sceneOne() {
     button2.id = "button2"
     document.getElementById('container').appendChild(button2);
 
-    button1.addEventListener('click', loadDeathScene);
-    button2.addEventListener('click', loadSecondScene);
+    button2.addEventListener('click', loadDeathScene);
+    button1.addEventListener('click', loadSecondScene);
+}
+
+function loadDeathScene() {
+    document.getElementById('button1').remove();
+    document.getElementById('button2').remove();
+    document.getElementById('container').style.backgroundColor = "black";
+    document.getElementById('gameText').remove();
+
+    const audio = new Audio("./monster.wav");
+    audio.play();
+
+    const deathText = document.createElement('h1');
+    deathText.innerHTML = "Du hann aldrig ifrån monstret innan det tog dig..";
+    deathText.id = "deathText"
+    document.getElementById('container').appendChild(deathText);
+
+
+}
+
+function loadSecondScene() {
+    document.getElementById('button1').remove();
+    document.getElementById('button2').remove();
+    document.getElementById('container').style.backgroundColor = "black";
+    document.getElementById('gameText').remove();
+
+    const text = document.createElement('p');
+    text.innerHTML = "Du springer därifrån samtidigt som du hör hur det märkliga ljudet kommer närmre och närmre. Du kommer till en grusväg - ska du gå vänster eller höger?";
+    text.id = "gameText"
+    document.getElementById('container').appendChild(text);
+    
 }
