@@ -4,12 +4,6 @@ function main() {
     startMenu();
 }
 
-const audio = new Audio("./monster.wav");	
-function playAudio() {
-    audio.play();
-}
-
-
 function startMenu() {
     const startButton = document.getElementById('startButton');
     startButton.textContent = "Starta spel";
@@ -68,4 +62,41 @@ function loadSecondScene() {
     text.id = "gameText"
     document.getElementById('container').appendChild(text);
     
+    const button1 = document.createElement('button');
+    button1.innerHTML = "Vänster!";
+    button1.id = "button1"
+    document.getElementById('container').appendChild(button1);
+
+    const button2 = document.createElement('button');
+    button2.innerHTML = "Höger!";
+    button2.id = "button2"
+    document.getElementById('container').appendChild(button2);
+
+    button1.addEventListener('click', loadDeathScene);
+    button2.addEventListener('click', loadThirdScene);
+}
+
+function loadThirdScene() {
+    document.getElementById('button1').remove();
+    document.getElementById('button2').remove();
+    document.getElementById('container').style.backgroundColor = "black";
+    document.getElementById('gameText').remove();
+
+    const text = document.createElement('p');
+    text.innerHTML = "Du springer höger och hör plötsligt ljudet komma framför dig. Du vänder dig om...och hör ännu ett ljud? Du ser ett träd du kan klättra upp i - vad gör du?";
+    text.id = "gameText"
+    document.getElementById('container').appendChild(text);
+
+    const button1 = document.createElement('button');
+    button1.innerHTML = "Klättrar upp i trädet";
+    button1.id = "button1"
+    document.getElementById('container').appendChild(button1);
+
+    const button2 = document.createElement('button');
+    button2.innerHTML = "Fortsätter framåt";
+    button2.id = "button2"
+    document.getElementById('container').appendChild(button2);
+
+    button1.addEventListener('click', loadDeathScene);
+    button2.addEventListener('click', loadDeathScene);
 }
