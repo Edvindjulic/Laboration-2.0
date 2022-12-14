@@ -1,10 +1,16 @@
 window.addEventListener("DOMContentLoaded", main);
 
+/**
+ * Loads the startMenu-function
+ */
 
 function main() {
     startMenu();
 }
 
+/**
+ * Startbutton loads the first scene (function) of the game on click
+ */
 
 function startMenu() {
     const startButton = document.getElementById('startButton');
@@ -12,7 +18,11 @@ function startMenu() {
     startButton.addEventListener('click', loadFirstScene);
 }
 
-
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
 function loadFirstScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
@@ -36,6 +46,12 @@ function loadFirstScene() {
 
 }
 
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
+
 function loadSecondScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
@@ -57,6 +73,12 @@ function loadSecondScene() {
     button1.addEventListener('click', loadDeathScene);
     button2.addEventListener('click', loadThirdScene);
 }
+
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
 
 function loadThirdScene() {
     const gameContainer = document.getElementById('container');
@@ -80,6 +102,12 @@ function loadThirdScene() {
     button2.addEventListener('click', loadDeathScene);
 }
 
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
+
 function loadFourthScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
@@ -101,6 +129,12 @@ function loadFourthScene() {
     button1.addEventListener('click', loadFifthScene);
     button2.addEventListener('click', loadSixthScene);
 }
+
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
 
 function loadFifthScene() {
     const gameContainer = document.getElementById('container');
@@ -124,6 +158,12 @@ function loadFifthScene() {
     button2.addEventListener('click', loadSeventhScene);
 }
 
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
+
 function loadSixthScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
@@ -146,6 +186,12 @@ function loadSixthScene() {
     button2.addEventListener('click', loadEndScene);
 }
 
+/**
+ * Loads a div and empties the content before
+ * creating two buttons and a paragraph. The two buttons
+ * each load a function when clicked
+ */
+
 function loadSeventhScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
@@ -155,15 +201,19 @@ function loadSeventhScene() {
     gameText.textContent = "Genom att krossa ett fönster tar du dig in i stugan. Efter en stund hör du hur någon låser upp ytterdörren. In kommer en gammal kvinna som säger - Där är du ju... Skrattandes släcker kvinnan lampan i stugan.";
     gameText.classList.add('gameText');
     
-
     const button1 = document.createElement('button');
     button1.textContent = "Avsluta";
     button1.classList.add('button1');
 
-
     gameContainer.append(gameText, button1);
     button1.addEventListener('click', loadDeathScene);
 }
+
+/**
+ * Loads a div and empties the content before
+ * creating a h1 and playing an audio. Also creates a button
+ * that calls for the first scene of the game when clicked.
+ */
 
 function loadEndScene() {
     const gameContainer = document.getElementById('container');
@@ -185,6 +235,11 @@ function loadEndScene() {
     returnButton.addEventListener('click', loadFirstScene);
 }
 
+/**
+ * Loads a div and empties the content before
+ * creating a h1 and playing an audio. Also creates a button
+ * that calls for the first scene of the game when clicked.
+ */
 
 function loadDeathScene() {
     const gameContainer = document.getElementById('container');
