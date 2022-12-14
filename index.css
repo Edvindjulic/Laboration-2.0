@@ -80,3 +80,11 @@ body {
     color: crimson;
     text-align: center;
 }
+
+.endText {
+    font-family: Verdana;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-top: 15%;
+}

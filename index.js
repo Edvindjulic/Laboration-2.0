@@ -165,13 +165,33 @@ function loadSeventhScene() {
     button1.addEventListener('click', loadDeathScene);
 }
 
+function loadEndScene() {
+    const gameContainer = document.getElementById('container');
+    gameContainer.innerHTML = "";
+    gameContainer.style.background = "white";
+
+    const audio = new Audio("./audio/completed.wav");
+    audio.play();
+
+    const endText = document.createElement('h1');
+    endText.classList.add('endText');
+    endText.textContent = "Du kör ut ur skogen och lovar dig själv att aldrig ta genvägen igen";
+
+    const returnButton = document.createElement('button');
+    returnButton.textContent = "Spela igen";
+    returnButton.classList.add('button2');
+
+    gameContainer.append(endText, returnButton);
+    returnButton.addEventListener('click', loadFirstScene);
+}
+
 
 function loadDeathScene() {
     const gameContainer = document.getElementById('container');
     gameContainer.innerHTML = "";
     gameContainer.style.background = "black";
 
-    const audio = new Audio("./monster.wav");
+    const audio = new Audio("./audio/monster.wav");
     audio.play();
 
     const deathText = document.createElement('h1');
