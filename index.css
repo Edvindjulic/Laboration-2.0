@@ -45,33 +45,38 @@ body {
     font-size: 75px;
 }
 
-#gameText {
+.gameText {
     color: aliceblue;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 
-#button1 {
+.button1 {
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 200px;
+    margin-bottom: 2px;
+    padding: 5px;
 }
 
-#button2 {
+.button2 {
     position: absolute;
     top: 65%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 200px;
+    margin-top: 2px;
+    padding: 5px;
 }
 
-#deathText {
+.deathText {
     font-family: 'Creepster';
-    font-size: 75px;
+    font-size: 60px;
     color: crimson;
     text-align: center;
 }
